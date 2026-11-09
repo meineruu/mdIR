@@ -1,0 +1,54 @@
+{
+  "dev": {
+    "queries": 324,
+    "exact_dup_in_train": 4,
+    "stem_dup_in_train": 9,
+    "stem_dup_mean_qrels_jaccard": 0.370190954632444,
+    "stem_dup_qids": [
+      "PLAIN-111",
+      "PLAIN-216",
+      "PLAIN-1939",
+      "PLAIN-2353",
+      "PLAIN-2439",
+      "PLAIN-3073",
+      "PLAIN-3351",
+      "PLAIN-3421",
+      "PLAIN-3471"
+    ],
+    "examples": [
+      "How to Get Kids to Eat Their Vegetables",
+      "Plant-Based Diets for Metabolic Syndrome",
+      "processed meats",
+      "walnut",
+      "From Table to Able: Combating Disabling Diseases with Food",
+      "Glycotoxins",
+      "Update on Spirulina",
+      "Broccoli Sprouts"
+    ]
+  },
+  "test": {
+    "queries": 323,
+    "exact_dup_in_train": 4,
+    "stem_dup_in_train": 7,
+    "stem_dup_mean_qrels_jaccard": 0.3973233263991806,
+    "stem_dup_qids": [
+      "PLAIN-153",
+      "PLAIN-913",
+      "PLAIN-1877",
+      "PLAIN-2440",
+      "PLAIN-2630",
+      "PLAIN-3053",
+      "PLAIN-3251"
+    ],
+    "examples": [
+      "How Should I Take Probiotics?",
+      "cinnamon",
+      "plant-based diet",
+      "More Than an Apple a Day: Combating Common Diseases",
+      "Alkylphenol Endocrine Disruptors and Allergies",
+      "Dragon's Blood",
+      "EPIC Study"
+    ]
+  },
+  "duplicate_doc_groups": 40
+}

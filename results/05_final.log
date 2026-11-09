@@ -1,0 +1,34 @@
+﻿signals 7 s
+pairs to score 26696
+python : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate 
+limits and faster downloads.
+At line:1 char:367
++ ... TECODE='1'; python "C:\Users\mirza\Downloads\sem 5\nlp\uas\medir\05_f ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Loading weights:   0%|          | 0/105 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 105/105 [00:00<00:00, 5404.10it/s]
+  base 0/26696 1s
+  base 6400/26696 204s
+  base 12800/26696 478s
+  base 19200/26696 764s
+  base 25600/26696 1048s
+dev CV linear {'P@5': 0.4247, 'R@5': 0.1386, 'F1@5': 0.1597, 'nDCG@5': 0.4474, 'P@10': 0.3704, 'R@10': 0.2093, 'F1@10': 0.2017, 'nDCG@10': 0.4356, 'MAP': 0.2784}
+dev CV GBM    {'P@5': 0.4265, 'R@5': 0.1347, 'F1@5': 0.1579, 'nDCG@5': 0.4386, 'P@10': 0.3793, 'R@10': 0.2098, 'F1@10': 0.2058, 'nDCG@10': 0.432, 'MAP': 0.2772}
+CHOSEN (dev CV nDCG@10): linear
+weights {'exp': 1.0, 'knn': 1.0, 'co': 0.25, 'rm3': 0.25, 'bm25': 0.0, 'bge': 0.0, 'medcpt': 0.0, 'ce_base': 0.25, 'rrf': 0.5}
+TF-IDF                           dev nDCG10=0.2968 P5=0.2951 | test P@5=0.3059 R@5=0.1267 F1@5=0.1231 nDCG@5=0.3572 P@10=0.2328 R@10=0.1569 F1@10=0.1253 nDCG@10=0.3244 MAP=0.1543
+BM25                             dev nDCG10=0.3000 P5=0.2951 | test P@5=0.3090 R@5=0.1268 F1@5=0.1249 nDCG@5=0.3603 P@10=0.2412 R@10=0.1568 F1@10=0.1281 nDCG@10=0.3293 MAP=0.1540
+BM25+RM3                         dev nDCG10=0.3148 P5=0.3179 | test P@5=0.3245 R@5=0.1309 F1@5=0.1303 nDCG@5=0.3751 P@10=0.2604 R@10=0.1750 F1@10=0.1423 nDCG@10=0.3504 MAP=0.1827
+BGE-small                        dev nDCG10=0.3269 P5=0.3321 | test P@5=0.3282 R@5=0.1275 F1@5=0.1280 nDCG@5=0.3756 P@10=0.2576 R@10=0.1620 F1@10=0.1359 nDCG@10=0.3438 MAP=0.1701
+MedCPT                           dev nDCG10=0.2945 P5=0.2932 | test P@5=0.3170 R@5=0.1277 F1@5=0.1259 nDCG@5=0.3621 P@10=0.2461 R@10=0.1653 F1@10=0.1342 nDCG@10=0.3302 MAP=0.1694
+Hybrid RRF (tanpa label)         dev nDCG10=0.3567 P5=0.3605 | test P@5=0.3498 R@5=0.1380 F1@5=0.1400 nDCG@5=0.4012 P@10=0.2827 R@10=0.1851 F1@10=0.1544 nDCG@10=0.3756 MAP=0.2021
+Hybrid + CE pretrained           dev nDCG10=0.3335 P5=0.3395 | test P@5=0.3238 R@5=0.1299 F1@5=0.1299 nDCG@5=0.3802 P@10=0.2548 R@10=0.1674 F1@10=0.1370 nDCG@10=0.3490 MAP=0.1927
+Expansion+kNN+Co-cite            dev nDCG10=0.4246 P5=0.4179 | test P@5=0.4285 R@5=0.1791 F1@5=0.1793 nDCG@5=0.4755 P@10=0.3687 R@10=0.2462 F1@10=0.2078 nDCG@10=0.4630 MAP=0.3454
+Hybrid RRF + label train         dev nDCG10=0.4109 P5=0.4111 | test P@5=0.4248 R@5=0.1672 F1@5=0.1718 nDCG@5=0.4708 P@10=0.3551 R@10=0.2340 F1@10=0.1992 nDCG@10=0.4508 MAP=0.2993
+Hybrid label + CE pretrained     dev nDCG10=0.3514 P5=0.3432 | test P@5=0.3387 R@5=0.1349 F1@5=0.1355 nDCG@5=0.3933 P@10=0.2759 R@10=0.1750 F1@10=0.1477 nDCG@10=0.3665 MAP=0.2598
+Final stacking                   dev nDCG10=0.4356 P5=0.4247 | test P@5=0.4365 R@5=0.1762 F1@5=0.1800 nDCG@5=0.4820 P@10=0.3728 R@10=0.2463 F1@10=0.2088 nDCG@10=0.4669 MAP=0.3100
+DONE

@@ -1,0 +1,12 @@
+fastapi==0.115.14
+uvicorn==0.34.3
+pydantic>=2.9,<3
+numpy
+scipy
+pandas
+pyarrow
+nltk
+scikit-learn
+torch
+transformers
+sentence-transformers
