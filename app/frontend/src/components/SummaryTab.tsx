@@ -49,7 +49,7 @@ export default function SummaryTab() {
               <Tooltip cursor={{ fill: "#f4f5f3" }} formatter={(v: number) => [fmt(v, 4), "P@5"]} />
               <Bar dataKey="P@5" isAnimationActive={false} barSize={20} radius={[0, 4, 4, 0]}>
                 {rows.map((r) => (
-                  <Cell key={r.name} fill={r.name === FINAL ? "#2a78d6" : "#c3c2b7"} />
+                  <Cell key={r.name} fill={r.name === FINAL ? "#0a6cff" : "#cbd5e1"} />
                 ))}
                 <LabelList dataKey="P@5" position="right" formatter={(v: number) => fmt(v)} style={{ fill: "#52514e", fontSize: 12 }} />
               </Bar>
