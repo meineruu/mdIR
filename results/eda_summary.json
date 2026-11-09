@@ -1,0 +1,74 @@
+{
+  "n_docs": 3633,
+  "n_queries": 3237,
+  "empty_title": 0,
+  "empty_text": 0,
+  "duplicate_doc_text": 40,
+  "duplicate_query_text": 21,
+  "train": {
+    "queries": 2590,
+    "pairs": 110575,
+    "mean_rel": 42.69305019305019,
+    "median_rel": 18.0,
+    "p90_rel": 77.0,
+    "max_rel": 1363,
+    "min_rel": 1,
+    "q_lt5": 545,
+    "q_lt10": 899,
+    "scores": {
+      "1": 110575
+    }
+  },
+  "dev": {
+    "queries": 324,
+    "pairs": 11385,
+    "mean_rel": 35.138888888888886,
+    "median_rel": 18.5,
+    "p90_rel": 70.09999999999997,
+    "max_rel": 919,
+    "min_rel": 1,
+    "q_lt5": 59,
+    "q_lt10": 115,
+    "scores": {
+      "2": 521,
+      "1": 10864
+    }
+  },
+  "test": {
+    "queries": 323,
+    "pairs": 12334,
+    "mean_rel": 38.18575851393189,
+    "median_rel": 16.0,
+    "p90_rel": 71.40000000000003,
+    "max_rel": 475,
+    "min_rel": 1,
+    "q_lt5": 72,
+    "q_lt10": 121,
+    "scores": {
+      "2": 576,
+      "1": 11758
+    }
+  },
+  "query_len": {
+    "mean": 3.318813716404078,
+    "median": 2.0,
+    "max": 18
+  },
+  "doc_len": {
+    "mean": 233.76520781723093,
+    "median": 237.0,
+    "p95": 348.0,
+    "max": 1481
+  },
+  "lexical_gap": {
+    "mean_overlap_relevant": 0.17793812947047907,
+    "mean_overlap_random": 0.0462570104852475,
+    "relevant_docs_zero_overlap_share": 0.6919085454840279
+  },
+  "doc_popularity_train": {
+    "mean": 30.43627855766584,
+    "median": 27.0,
+    "max": 256,
+    "docs_without_label": 45
+  }
+}

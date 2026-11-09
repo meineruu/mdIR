@@ -1,0 +1,10 @@
+data/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+node_modules/
+dist/
+*.part.npz
+07_qwen.py
+results/03_dense.log
+results/04_finetune.log
