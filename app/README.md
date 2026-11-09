@@ -7,7 +7,11 @@ UI demo untuk model **Final stacking** pada NFCorpus: pencarian, perbandingan BM
 - Python 3.14 dan Node.js 20 atau lebih baru
 - `medir/data/` (jalankan `python download_data.py` bila belum ada)
 - `medir/cache/` dan `medir/results/` hasil skrip eksperimen
-- Model BGE-small, MedCPT Query Encoder, dan cross-encoder MS MARCO di cache Hugging Face. Backend berjalan offline, jadi unduh dulu dengan menjalankan `03_dense.py` dan `05_final.py`.
+- Model BGE-small, MedCPT Query Encoder, dan cross-encoder MS MARCO di cache Hugging Face. Backend berjalan offline, jadi unduh sekali dulu (sekitar 650 MB):
+
+```bash
+python -c "from huggingface_hub import snapshot_download as d; [d(m, ignore_patterns=['*.bin','onnx/*','openvino/*']) for m in ('BAAI/bge-small-en-v1.5','ncbi/MedCPT-Query-Encoder','cross-encoder/ms-marco-MiniLM-L6-v2')]"
+```
 
 ## Menjalankan
 
