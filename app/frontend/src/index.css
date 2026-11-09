@@ -1,22 +1,38 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
-  --color-surface: #fcfcfb;
-  --color-page: #f4f5f3;
-  --color-ink: #0b0b0b;
-  --color-ink-2: #52514e;
-  --color-muted: #6f6d68;
-  --color-line: #e1e0d9;
-  --color-brand: #0f5e6b;
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Source Serif 4", Cambria, Georgia, serif;
+  --color-surface: #ffffff;
+  --color-page: #f8fbff;
+  --color-ink: #0b2545;
+  --color-ink-2: #4a5a70;
+  --color-muted: #6b7a8f;
+  --color-line: #e3e9f1;
+  --color-brand: #0a6cff;
+  --radius-xl: 1.125rem;
+  --shadow-sm: 0 1px 2px rgb(11 37 69 / 0.04), 0 8px 24px rgb(11 37 69 / 0.06);
 }
 
-body {
-  background: var(--color-page);
-  color: var(--color-ink);
-  font-family: var(--font-sans);
+@layer base {
+  body {
+    background: linear-gradient(180deg, #ffffff 0, var(--color-page) 420px);
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.01em;
+  }
 }
 
 .tnum {
   font-variant-numeric: tabular-nums;
+}
+
+.btn-glow {
+  box-shadow: 0 10px 24px rgb(10 108 255 / 0.28);
 }

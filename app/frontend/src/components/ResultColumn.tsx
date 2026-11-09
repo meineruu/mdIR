@@ -61,7 +61,7 @@ function ContributionBar({ signals, max }: { signals: Sinyal[]; max: number }) {
           <YAxis type="category" hide />
           <Tooltip content={<ContributionTooltip />} cursor={false} allowEscapeViewBox={{ x: true, y: true }} wrapperStyle={{ zIndex: 20 }} />
           {signals.map((s) => (
-            <Bar key={s.kode} dataKey={s.kode} name={s.nama} stackId="a" fill={SIGNAL_COLORS[s.kode]} stroke="#fcfcfb" strokeWidth={2} isAnimationActive={false} />
+            <Bar key={s.kode} dataKey={s.kode} name={s.nama} stackId="a" fill={SIGNAL_COLORS[s.kode]} stroke="#ffffff" strokeWidth={2} isAnimationActive={false} />
           ))}
         </BarChart>
       </ResponsiveContainer>
@@ -144,7 +144,7 @@ export default function ResultColumn({ title, results, final }: { title: string;
   const signals = results[0]?.sinyal ?? [];
   return (
     <section>
-      <h2 className="mb-2 font-semibold">{title}</h2>
+      <h2 className="mb-2 text-xl font-semibold">{title}</h2>
       {final ? (
         <div className="relative z-10 mb-3 rounded-xl bg-surface p-3 shadow-sm">
           <ul className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-ink-2">
