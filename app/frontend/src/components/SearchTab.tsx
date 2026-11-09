@@ -98,7 +98,7 @@ export default function SearchTab() {
   const hero = !data;
 
   return (
-    <div className="space-y-5">
+    <div className={`space-y-5 ${hero ? "" : "mx-auto max-w-3xl"}`}>
       <section className={hero ? "grid grid-cols-1 items-center gap-8 pt-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]" : ""}>
         <div className={hero ? "space-y-6" : "space-y-4 rounded-xl bg-surface p-4 shadow-sm sm:p-5"}>
           {hero && (
@@ -202,11 +202,7 @@ export default function SearchTab() {
       )}
 
       {loading && !data && (
-        <div className="grid gap-4 lg:grid-cols-2" aria-label="Memuat hasil">
-          {[0, 1].map((i) => (
-            <div key={i} className="h-96 animate-pulse rounded-xl bg-line/60" />
-          ))}
-        </div>
+        <div className="h-96 animate-pulse rounded-xl bg-line/60" aria-label="Memuat hasil" />
       )}
 
       {data && (
@@ -227,19 +223,9 @@ export default function SearchTab() {
             </p>
           )}
 
-          {data.metrik ? (
-            <MetricsTable bm25={data.metrik.bm25} final={data.metrik.final} />
-          ) : (
-            <p className="rounded-xl bg-surface px-4 py-3 text-sm text-ink-2 shadow-sm">
-              Query bebas tidak punya ground truth, jadi status relevansi dan metrik tidak ditampilkan. Pilih query dari
-              split test untuk membandingkannya dengan qrels.
-            </p>
-          )}
+          {data.metrik && <MetricsTable final={data.metrik.final} />}
 
-          <div className="grid items-start gap-4 lg:grid-cols-2">
-            <ResultColumn title="BM25 (baseline)" results={data.bm25} final={false} />
-            <ResultColumn title="Final stacking" results={data.final} final />
-          </div>
+          <ResultColumn results={data.final} />
         </div>
       )}
     </div>
