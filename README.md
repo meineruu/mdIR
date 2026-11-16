@@ -13,6 +13,7 @@ Label dari `train`, parameter dipilih di `dev`, dan `test` hanya untuk pelaporan
 
 - [`MedIR_NFCorpus_Eksperimen.ipynb`](MedIR_NFCorpus_Eksperimen.ipynb): EDA, eksperimen, analisis kesalahan, dan interpretasi per cell
 - [`app/`](app/README.md): demo FastAPI dan React
+- [`deploy/`](deploy/README.md): panduan deploy frontend ke Vercel dan backend ke Hugging Face Spaces
 - `00_eda.py` sampai `06_error_analysis.py`: skrip eksperimen
 
 Dataset tidak disertakan. Unduh dengan `python download_data.py`. Folder `cache/` berisi embedding dan hasil cross-encoder agar notebook dan demo tidak perlu menghitung ulang.
