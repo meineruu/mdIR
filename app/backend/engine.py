@@ -199,7 +199,7 @@ class Engine:
         m = evaluate({qid: order}, {qid: rels}, ks=(5, 10), log=False)
         return {"p5": m["P@5"], "p10": m["P@10"], "ndcg10": m["nDCG@10"]}
 
-    def search(self, query, split_test_id=None, use_ce=True, k=10):
+    def search(self, query, split_test_id=None, use_ce=True, k=10, final_k=CAND):
         t0 = time.time()
         rels = None
         if split_test_id is not None:
@@ -210,7 +210,7 @@ class Engine:
         terms = set(analyze(query))
 
         final = []
-        for pos, p in enumerate(r["head"][:k]):
+        for pos, p in enumerate(r["head"][:final_k]):
             final.append(self._result(pos + 1, r["pool"][p], r["scores"][p], terms, rels,
                                       self._signals_for(r["F"][p], r["w"])))
         bm25 = [self._result(pos + 1, d, r["bm25_scores"][self.did2i[d]], terms, rels)

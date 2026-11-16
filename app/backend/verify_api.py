@@ -50,7 +50,7 @@ print("GET /api/summary", status, "| P@5 Final", round(s["final_table"]["Final s
 bad = 0
 for qid in ["PLAIN-2670", "PLAIN-2386", "PLAIN-3342", "PLAIN-133", "PLAIN-1909"]:
     status, r = call("/api/search", {"query": "", "pakai_cross_encoder": True, "split_test_id": qid})
-    same_f = [x["doc_id"] for x in r["final"]] == runs["Final stacking"][qid][:10]
+    same_f = [x["doc_id"] for x in r["final"]] == runs["Final stacking"][qid][:30]
     same_b = [x["doc_id"] for x in r["bm25"]] == runs["BM25"][qid][:10]
     gaps = [abs(r["metrik"]["bm25"][a] - pa[qid][b]) for a, b in (("p5", "P@5"), ("p10", "P@10"), ("ndcg10", "nDCG@10"))]
     gaps += [abs(r["metrik"]["final"][a] - pb[qid][b]) for a, b in (("p5", "P@5"), ("p10", "P@10"), ("ndcg10", "nDCG@10"))]
@@ -65,8 +65,8 @@ print("ketidakcocokan:", bad)
 for qid in ["PLAIN-2670", "PLAIN-133"]:
     text = call("/api/search", {"query": "", "split_test_id": qid})[1]["query"]
     status, r = call("/api/search", {"query": text, "pakai_cross_encoder": True})
-    overlap = len(set(x["doc_id"] for x in r["final"]) & set(runs["Final stacking"][qid][:10]))
-    print(f"bebas '{text[:40]}' {status} metrik={r['metrik']} relevansi={r['final'][0]['relevansi']} top10 sama {overlap}/10 {r['waktu_ms']:.0f}ms")
+    overlap = len(set(x["doc_id"] for x in r["final"]) & set(runs["Final stacking"][qid][:30]))
+    print(f"bebas '{text[:40]}' {status} metrik={r['metrik']} relevansi={r['final'][0]['relevansi']} top30 sama {overlap}/{len(r['final'])} {r['waktu_ms']:.0f}ms")
 
 status, r = call("/api/search", {"query": "", "pakai_cross_encoder": False, "split_test_id": "PLAIN-2670"})
 print("tanpa CE", status, r["metrik"]["final"], f"{r['waktu_ms']:.0f}ms")

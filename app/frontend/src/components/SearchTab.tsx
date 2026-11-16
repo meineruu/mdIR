@@ -225,7 +225,8 @@ export default function SearchTab() {
 
           {data.metrik && <MetricsTable final={data.metrik.final} />}
 
-          <ResultColumn results={data.final} />
+          {/* key baru mengembalikan daftar ke 10 hasil setiap kali pencarian berganti */}
+          <ResultColumn key={`${data.split_test_id ?? data.query}-${data.pakai_cross_encoder}`} results={data.final} />
         </div>
       )}
     </div>

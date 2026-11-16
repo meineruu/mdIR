@@ -91,15 +91,32 @@ function Card({ item }: { item: Hasil }) {
   );
 }
 
+const PAGE_SIZE = 10;
+
 export default function ResultColumn({ results }: { results: Hasil[] }) {
+  const [shown, setShown] = useState(PAGE_SIZE);
+  const visible = results.slice(0, shown);
   return (
     <section>
       <h2 className="mb-3 text-xl font-semibold">Final stacking</h2>
       <ol className="space-y-3">
-        {results.map((r) => (
+        {visible.map((r) => (
           <Card key={r.doc_id} item={r} />
         ))}
       </ol>
+      <div className="mt-4 flex flex-col items-center gap-2">
+        <p className="text-sm text-ink-2" aria-live="polite">
+          Menampilkan {visible.length} dari {results.length} artikel teratas
+        </p>
+        {shown < results.length && (
+          <button
+            onClick={() => setShown(shown + PAGE_SIZE)}
+            className="rounded-full border border-brand bg-white px-5 py-2 text-sm font-medium text-brand transition-colors hover:bg-blue-50"
+          >
+            Tampilkan lebih banyak
+          </button>
+        )}
+      </div>
     </section>
   );
 }
